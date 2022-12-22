@@ -1,0 +1,41 @@
+
+
+ <link rel="stylesheet" href="./css/style.css">
+    
+    <header class="Navwrap"  >
+        
+        <button id="menu" onclick="myFunction()" style="font-size: larger; ">&#9776;</button>
+        
+        
+        <div class="nav" style="width: 100%;">
+            
+            
+          
+            <% if(!currentUser){ %>
+                <a href="/admin/register">Admin Register</a>
+                <a href="/admin/login">Admin login</a>
+                <a href="/products">products</a>
+            <% } else{ %>
+               <a href="#">Signed In as <%= currentUser.username %></a>
+                <a href="/admin/logout">logout</a>
+            <% } %>
+           
+        </div>
+        
+       
+
+    </header>
+    <!-- description  -->
+
+
+
+    
+
+
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+
+  <!-- End of .container -->
+    <script src="./css/index.js">
+        
+
+    </script>

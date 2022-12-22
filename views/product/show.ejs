@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+<!--navbar  -->
+<div class="p-3">
+    <header>
+        <section class="d-flex justify-content-between">
+            <div class="align-self-end">
+                <a href="#" class="mx-1">Member login</a>
+                <a href="#" class="mx-1">Find a Member</a>
+                <a href="#" class="btn btn-light mx-1"><i class="fa-sharp fa-solid fa-globe"></i> India</a>
+            </div>
+        </section>
+        <hr>
+        <section>
+                <nav class="navbar navbar-expand-lg bg-light">
+                    <div class="container-fluid d-flex ">
+                        <a class="navbar-brand" href="#">HOME</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                                <li class="nav-item "> <!--dropdown-->
+                                    <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ALL PRODUCTS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link  align-self-end" aria-current="page" href="#">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">ADMIN LOGIN</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+        </section>
+    </header>
+    <section>
+        <div class="container">
+            <h2 class=" display-4 text-center mt-4"><%= Product.name %></h2>
+            <div class="row">
+                <div class="col">
+                    <img src="data:image/<%= Product.image.contentType%>;base64,
+                    <%=Product.image.data.toString('base64')%>" class="" alt="">
+                </div>
+                <div class="col d-flex flex-column justify-content-center">
+                    <a href="#ProductDesctption" class="btn btn-light mb-5">More Details</a>
+                    <p class="fs-2">Maximum Retail Price MRP (Inclusive of taxes) Rs. <%= Product.price %>
+                    </p>
+                    <a href="/<%= Product._id %>/bill" class="btn btn-primary mt-5">SHOP NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ProductDesctption">
+        <div class="container d-flex flex-column">
+            <p class="display-4 text-center mt-4">Product Overview</p>
+            <p class="fs-3 text"><%= Product.description %></p>
+        </div>
+    </section>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
+    <!-- footer -->
+    <%- include('../partials/footer'); %>
+    <script src="../css/index.js"></script>
+</body>
+
+</html>
